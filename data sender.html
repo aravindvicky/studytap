@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Study Tap</title>
+  <link rel="stylesheet" href="data sender.css" type="text/css">
+
+</head>
+
+<body>
+  <div class="top">
+
+    <h2 class="top-1">STUDY TAP</h2>
+
+  </div>
+
+  <div class="row">
+
+    <div class="contact-col">
+      <form action="https://sheetdb.io/api/v1/dinu9uovw35zy" method="POST" id="sheetdb-form">
+        <h2 class="blog-page">Title <input type="text" name="Title" placeholder="Enter Title" required></h2>
+        <h2 class="blog-page">Subtitle <input type="text" name="Subtitle" placeholder="Enter Subtitle" required>
+          <!-- <p><label for="file" style="cursor: pointer;">Upload Image</label></p> -->
+          <h2 class="blog-page">Content <textarea rows="20" name="Content" placeholder="Enter Your Content"
+              required></textarea>
+             <!-- <h2>Upload image <input type="file" id="image" name="image" accept="image/png, image/jpeg"></h2> -->
+            <button type="submit" class="hero-btn">Submit</button>
+      </form>
+
+      <script>
+        var form = document.getElementById('sheetdb-form');
+        form.addEventListener("submit", e => {
+          e.preventDefault();
+          fetch(form.action, {
+            method: "POST",
+            body: new FormData(document.getElementById("sheetdb-form")),
+          }).then(
+            response => response.json()
+          ).then((html) => {
+            alert('Data Sent Succesfully')
+          });
+        });
+        
+      </script>
+    </div>
+  </div>
+
+</body>
+
+</html>
